@@ -1,0 +1,34 @@
+D:\LẬP TRÌNH WWW\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\bin\Debug\ComMon_BaiTapLon.dll.config
+D:\LẬP TRÌNH WWW\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\bin\Debug\ComMon_BaiTapLon.dll
+D:\LẬP TRÌNH WWW\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\bin\Debug\ComMon_BaiTapLon.pdb
+D:\LẬP TRÌNH WWW\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\bin\Debug\EntityFramework.dll
+D:\LẬP TRÌNH WWW\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\bin\Debug\EntityFramework.SqlServer.dll
+D:\LẬP TRÌNH WWW\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\bin\Debug\EntityFramework.xml
+D:\LẬP TRÌNH WWW\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\bin\Debug\EntityFramework.SqlServer.xml
+D:\LẬP TRÌNH WWW\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\obj\Debug\ComMon_BaiTapLon.csproj.CoreCompileInputs.cache
+D:\LẬP TRÌNH WWW\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\obj\Debug\ComMon_BaiTapLon.csproj.CopyComplete
+D:\LẬP TRÌNH WWW\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\obj\Debug\ComMon_BaiTapLon.dll
+D:\LẬP TRÌNH WWW\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\obj\Debug\ComMon_BaiTapLon.pdb
+C:\Users\quydo\Desktop\Hung\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\bin\Debug\ComMon_BaiTapLon.dll.config
+C:\Users\quydo\Desktop\Hung\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\bin\Debug\ComMon_BaiTapLon.dll
+C:\Users\quydo\Desktop\Hung\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\bin\Debug\ComMon_BaiTapLon.pdb
+C:\Users\quydo\Desktop\Hung\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\bin\Debug\EntityFramework.dll
+C:\Users\quydo\Desktop\Hung\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\quydo\Desktop\Hung\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\bin\Debug\EntityFramework.xml
+C:\Users\quydo\Desktop\Hung\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\quydo\Desktop\Hung\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\obj\Debug\ComMon_BaiTapLon.csprojAssemblyReference.cache
+C:\Users\quydo\Desktop\Hung\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\obj\Debug\ComMon_BaiTapLon.csproj.CoreCompileInputs.cache
+C:\Users\quydo\Desktop\Hung\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\obj\Debug\ComMon_BaiTapLon.csproj.CopyComplete
+C:\Users\quydo\Desktop\Hung\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\obj\Debug\ComMon_BaiTapLon.dll
+C:\Users\quydo\Desktop\Hung\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\obj\Debug\ComMon_BaiTapLon.pdb
+C:\Users\quydo\Desktop\WWW_BaiTapLon_QLSV\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\bin\Debug\ComMon_BaiTapLon.dll.config
+C:\Users\quydo\Desktop\WWW_BaiTapLon_QLSV\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\bin\Debug\ComMon_BaiTapLon.dll
+C:\Users\quydo\Desktop\WWW_BaiTapLon_QLSV\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\bin\Debug\ComMon_BaiTapLon.pdb
+C:\Users\quydo\Desktop\WWW_BaiTapLon_QLSV\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\bin\Debug\EntityFramework.dll
+C:\Users\quydo\Desktop\WWW_BaiTapLon_QLSV\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\quydo\Desktop\WWW_BaiTapLon_QLSV\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\bin\Debug\EntityFramework.xml
+C:\Users\quydo\Desktop\WWW_BaiTapLon_QLSV\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\quydo\Desktop\WWW_BaiTapLon_QLSV\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\obj\Debug\ComMon_BaiTapLon.csproj.CoreCompileInputs.cache
+C:\Users\quydo\Desktop\WWW_BaiTapLon_QLSV\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\obj\Debug\ComMon_BaiTapLon.csproj.CopyComplete
+C:\Users\quydo\Desktop\WWW_BaiTapLon_QLSV\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\obj\Debug\ComMon_BaiTapLon.dll
+C:\Users\quydo\Desktop\WWW_BaiTapLon_QLSV\WWW_BaiTapLon_QLSV\ComMon_BaiTapLon\obj\Debug\ComMon_BaiTapLon.pdb

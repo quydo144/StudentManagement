@@ -1,0 +1,151 @@
+﻿@model EntityFrameWork_BaiTapLon.Entities_BaiTapLon.GiangVien
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="shortcut icon" href="https://media.iuh.edu.vn/Media/2_sviuh/Images/icon65d669c1-0-e.ico">
+    <link rel="stylesheet" type="text/css" href="~/Content/main.css">
+    <link href="~/Content/components.css" rel="stylesheet" />
+    <link href="~/Content/profile.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/Content/style.css?v=15">
+    <link rel="stylesheet" type="text/css" href="/Content/base.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/responsive.css">
+    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+    <style>
+        .tt {
+            font-style: inherit;
+            color: black;
+            width: inherit;
+            height: inherit;
+        }
+
+        .profile-userpic {
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div id="focus-overlay"></div>
+    <div class="wrapper">
+
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+
+                    <div class="menu-btn">
+                        <a href="#" title=""><i class="fa fa-bars"></i></a>
+                    </div>
+                    <div class="user-account dropdown">
+                        <div class="user-info" data-toggle="dropdown">
+                            <a href="#" title="">@Model.TenGiangVien</a>
+                            <i class="fa fa-caret-down" aria-hidden="true"></i>
+                        </div>
+                        <div class="user-account-info dropdown-menu pull-right">
+                            <ul class="us-links">
+                                <li><a href="/SinhVien/Logout" title="">Đăng xuất</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="menu-top">
+                        <ul>
+                            <li>
+                                <a href="/dashboard.html" title="">
+                                    <span><i class="fa fa-home" aria-hidden="true"></i></span>
+                                    Trang chủ
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="main-content main-dashboard">
+            <div class="container">
+                <div class="main-section-content" id="contnet">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="box-df profile-ds-info">
+                                <div class="portlet">
+
+                                    <div class="portlet-title">
+                                        <div class="caption">
+                                            <span class="caption-subject bold">Thông tin giảng viên</span>
+                                        </div>
+                                    </div>
+                                    <div class="portlet-body">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <div class="profile-userpic">
+                                                    <img src="data:image/png;base64,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" class="img-responsive" style="object-fit: cover;" height="200" width="200" />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <form class="form-horizontal">
+                                                    <div class="form-body">
+                                                        <div class="form-group">
+                                                            <label class="col-xs-6">Họ Tên : <span class="bold">@Model.TenGiangVien</span></label>
+                                                            <label class="col-xs-6">Mã giảng viên :  <span class="bold">@Model.GiangVienid</span></label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-xs-6">Giới tính : <span class="bold">@Model.Gioitinh</span></label>
+                                                            <label class="col-xs-6">Địa chỉ : <span class="bold">@Model.Diachi</span></label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-xs-6">Email : <span class="bold">@Model.Email</span></label>
+                                                            <label class="col-xs-6">Chuyên ngành : <span class="bold">@Model.ChuyenNganh</span></label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-xs-6">Ngày sinh : <span class="bold">@Model.Ngaysinh</span></label>
+
+                                                        </div>
+
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="featured">
+
+                        <div class="featured-item">
+                            <a href=@Url.Action("DanhSachMonHoc","GiangVien") title="Danh sách môm học">
+                                <div class="box-df">
+                                    <div class="icon">
+                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAACdElEQVRIib3WSahOYRwG8N+RoUghs40hazJ0S6YbSuKKpCzIEYVYKDYWhlKElGsoC06mWFGmkmlPGUpZWAklESHcDMfifT+Oe+/3Odz7eep03nP+b+/z/p//8w6JY7mOIE/b/59keuIqJuMuGvPUuy4dYquNKxiDpRiCm1BPwgbsy1OnsAPjoWsdCW9ja5KZiDk4RPkMh2I5RpTpnGR2YSoOYzh25Kl1lMtwOm7ha+w/WzBDNbLd2IT5eepC63iZDM8JBuiGE7QdJMn0iu89kaypPbKyhF/wMbYfojue4CAak8wtfEgyT7AR8/LUxWqD/YlwBQZiEd5jN9biIuYLVh+KZUhwJ09dqjVgrRoejYRrcA0LcAP3YnwdcpzOUyeTTG/RiZBkVmExBuMVzuep5iLhDCyJg6/EzPjciPG97UxqJ7YnmQYF60c044NguAbsR3NF0mW4jiacxRQMKpBVw+b4jFKwfkQLtuSpxdgQv39KehxHsBpbsB4v/0AG8tTOmGlrtAhywrDWhM8xLgYmaVvbvvHfV7wpM5FqqEg6C6PxDNPQWOhzRij6S7ymuuX/hvCRYP9Z6I/7hT5NuIy5OB3f/4yidF8E47RGi2Cey+iNhYXYqiRra/1ahGV3mn6xPUCoYwXNGCsoNFKwfk109Dxs1/q1UJG0n2CanviMx4JEZQjbWL8M4Xnh/PouZH1PWCadjoqkE3BAmOU24S5SF1QIPwmL/wWe+nUc1Y3wm1A/6CVIW1fC/4Zihm9j+7XfM+zUWFfhvjhEuCE/EM7FPsLlSZlYkv2KJVnN2ITEsfyBsEt0jxP4JqzFSk0/okcnxFrw9AcL/rqKbZW/OQAAAABJRU5ErkJggg==" alt="">
+                                    </div>
+                                    Danh sách môm học
+                                </div>
+                            </a>
+                        </div>
+                        <div class="featured-item">
+                            <a target=_blank href="@Url.Action("DanhSachLopHocPhan","GiangVien")" title="Danh sách lớp học phần">
+                                <div class="box-df">
+                                    <div class="icon">
+                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAYCAYAAADpnJ2CAAADU0lEQVRIia3WbYhWRRQH8N88rlEaBS4lViYWtZDmhzIq6AVJC0wUpFxCyiaK2gRfSkrcKMosrKygFzXIa4EUfjDNisoy2FqhsEhdIi1IV0uxIAV7Mavpw9yN62Ou+1QH7ofLnDn/OXP+538mWJY0aDdjKfqjLUVLG9lca8C3Fd+iwHN4DEtC4ftQuPH/BLwaX+FVbMRQ3IW5GIL1eDkUukNhwn8BvBxdeAffoAWTsKvisydFrRiOz7E2FLaFwthGAC9AJzpwAKPLLLcdLUiKtqdoIkZhN9aFwiehcGlvgOfgPXyKE8sMLyn/+2Qp2pKiK3ExAjaEQkcojOzxCZal4Wgrv12YgzcbADmqhcJVeKpMZgkWB8vSAQzEQ3igr0B9AawAz8aTSDVMxirciddwdqOgvQANDYWVmIe1mNCEd8uvBW/ha7wiU3/PvwRqxhOySOzC2BRt4nDSnC5ndwPGymx7ESc3ADQgFJ7HD3ILxRQNRXMo9OsBvAfbyxP1lxv8VJlE12MfFuH4XoCaQmEBfiqzmp2iQSlaXroswM5QuK+GGRiGD3GoEmcJTpJZOwO/YP4/gLWX++ahPUUDUvR0ndv7sirNruEM3CJr5SFHMnVRmfl8tONX3IppsjA8jIVoStEjdYe5NxQOyoS8PUXNoW5aPIj7cVDWyvqTNuFxzCr/F2NOin6uA2or/QZiYYrm/r1WAl6D23AdTsCjmIn9co1fqAM+Df2ws9qHoTCtBDpFLsncFO0vW2NFitbU8DHelqWIXKtZGITX5dm3RyZQj32HnRWgSaHQjeX4AINT1Jai/ZWYq0NhUw1f4HcMxsRK0B9xk9wuHViJHbi24jMuFLZhtTwthqWoNUV7K4cZX8b4E101RHnG7cUabC2vuJrNFFkYvsQbMqPXy4KxGyNTNDFF3RWgMaGwWdbl38rDTK0nTQuelRt/C+7ABofbKKzAcZiaoo3VxVAYLdfvQnwkP0O6etab6oJtxThcJDO0s9w0E5+VPptxft0+oTACz2CMPNIuS1HnEX7HeERdIVP/PPn6pstaW7Uz5TfOBPkpMj1F644W8Fhvmg6MwHicVQZcJdd8iCzyO+SMJ6fo3N7AOHaG9TZFvrZ9+EPW3LtT9FJfA/wFQAIJ7FVYOrIAAAAASUVORK5CYII=" alt="">
+                                    </div>
+                                    Danh sách lớp học phần
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

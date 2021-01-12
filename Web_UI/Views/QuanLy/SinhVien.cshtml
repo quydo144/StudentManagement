@@ -1,0 +1,120 @@
+﻿@using Web_UI.Models
+@model IEnumerable<EntityFrameWork_BaiTapLon.Entities_BaiTapLon.SinhVien>
+
+@{
+    ViewBag.Title = "SinhVien";
+}
+
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row" style="margin-bottom:1.5em;">
+            <div class="col-md-12">
+                <nav class="nav navbar-expand-md">
+                    <span style="margin-right:1em;">Danh sách sinh viên</span>
+                    <select class="form-control form-control-sm" style="font-size:1em;">
+                        <option value="k13">2017-2021</option>
+                        <option value="k14">2018-2022</option>
+                        <option value="k15">2019-2023</option>
+                    </select>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Thêm sinh viên</button>
+            </div>
+            <table class="table table-striped table-responsive">
+                <tr>
+                    <th scope="row">Mã số sinh viên</th>
+                    <th scope="row">Tên sinh viên</th>
+                    <th scope="row">Ngày sinh</th>
+                    <th scope="row">Lựa chọn</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.SinhVienId</td>
+                        <td>@item.tenSinhVien</td>
+                        <td>@item.Ngaysinh.ToShortDateString()</td>
+                        <td>
+                            <form>
+                                <button class="btn-danger">Xoá</button>
+                                <button class="btn-warning">Cập nhật</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">X</button>
+                    <h1 style="text-align: center;">Thêm sinh viên</h1>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="txt" class="control-label col-xs-3">Tên sinh viên</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" id="txtTenSV" placeholder="Nhập tên sinh viên">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txt" class="control-label col-xs-3">Giới tính</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" id="chkGioiTinh">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txt" class="control-label col-xs-3">Ngày sinh</label>
+                        <div class="col-md-9">
+                            <input type="date" class="form-control" id="txtNgaySinh">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txt" class="control-label col-xs-3">Địa chỉ</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" id="txtDiaChi" placeholder="Nhập địa chỉ">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txt" class="control-label col-xs-3">Chuyên ngành</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" id="txtChuyenNganh" placeholder="Nhập chuyên ngành">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txt" class="control-label col-xs-3">Bậc đào tạo</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" id="txtBacDT" placeholder="Nhập bậc đào tạo">
+                        </div>
+                    </div>                    
+                    <div class="form-group">
+                        <label for="txt" class="control-label col-xs-3">Số điện thoại</label>
+                        <div class="col-md-9">
+                            <input type="tel" class="form-control" id="txtSDT" placeholder="Nhập số điện thoại">
+                        </div>
+                    </div>                    
+                    <div class="form-group">
+                        <label for="txt" class="control-label col-xs-3">Chọn khoá học</label>
+                        <div class="col-md-9">
+                            <select id="selKhoa" class="form-control">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                    </div>                 
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btnSave" class="btn btn-success btn-block">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

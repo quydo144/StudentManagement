@@ -1,0 +1,231 @@
+﻿@model IEnumerable<EntityFrameWork_BaiTapLon.Entities_BaiTapLon.MonHoc>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="/Content/Dashboard/css/components.min.css" rel="stylesheet" />
+    <link href="/Content/Dashboard/css/profile.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <style>
+        .selected {
+            background-color: blueviolet;
+            color: #fff;
+        }
+
+        .caption {
+            background-color: aquamarine;
+            color: crimson;
+            font-weight: 300;
+            height: 50px;
+        }
+
+        .caption-subject bold {
+            background: center;
+            stop-color: aqua;
+            border-style: groove;
+        }
+
+        .tr {
+            color: orangered;
+            background-color: darkkhaki;
+        }
+
+        .table table-bordered {
+            border-bottom-color: red;
+            border-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <img src="http://iuh.edu.vn/Resource/Upload2/Image/banner/top/slide34.png" width="1135" height="200" /><br><br>
+            </div>
+        </header>
+        <div class="main-content main-dashboard">
+            <div class="container">
+                <div class="main-section-content" id="contnet">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="box-df">
+                                <div class="portlet">
+                                    <div class="portlet-title">
+                                        <div class="caption">
+                                            <center> <h1> <span class="caption-subject bold">DANH SÁCH MÔN HỌC</span></h1></center>
+                                        </div>
+                                        <br><br>
+                                    </div>
+                                </div>
+                                <div>
+                                    <table id="mh" class="table table-bordered">
+                                        <thead>
+                                            <tr class="tr">
+                                                <th>Mã môn học</th>
+                                                <th>Tên môn học</th>
+                                                <th>Số tín chỉ</th>
+                                            </tr>
+                                        </thead>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tbody>
+                                                <tr>
+                                                    <td>@item.MonhocId</td>
+                                                    <td>@item.TenMonHoc</td>
+                                                    <td>@item.Sotinchi</td>
+                                                </tr>
+                                            </tbody>
+                                        }
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <table id="tablLopHocPhan" class="table table-bordered">
+                                <thead>
+                                    <tr class="tr">
+                                        <th>Mã lớp học phần</th>
+                                        <th>Tên lớp học phần</th>
+                                        <th>Số lượng</th>
+                                        <th>Ngày bắt đầu</th>
+                                        <th>Ngày kết thúc</th>
+                                        <th>Ngày kết thúc đăng kí</th>
+                                        <th>Trạng thái</th>
+
+                                        <th>Mô tả</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <table id="tablDanhSachSinhVien" class="table table-bordered">
+                                <thead>
+                                    <tr class="tr">
+                                        <th>Mã sinh viên</th>
+                                        <th>Họ tên </th>
+                                        <th>Giới tính </th>
+                                        <th>Ngày sinh</th>
+                                        <th>Địa chỉ</th>
+                                        <th>Chuyên ngành</th>
+                                        <th>Bậc ĐT</th>
+                                        <th>SĐT</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    @*<div> <button style="font-size:smaller" class="btn-action" id="nhapdiem">Nhập điểm</button></div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $('#mh tbody tr').click(function () {
+             $('.selected').removeClass('selected');
+             $(this).addClass("selected");
+             var temp = $(this).find('td:first').html();
+             $.ajax({
+                type: "post",
+                url: '@Url.Action("getDanhSachLopHocPhan")',
+                data: {
+                    id: parseInt(temp)
+                 },
+                 success: function (json) {
+                     $("#tablLopHocPhan tbody tr").remove();
+                     $.each(json, function (index, item) {
+                         var ngayBD = new Date ( parseInt(item.NgayBD.replace(/(^.*\()|([+-].*$)/g, '')));
+                         var ngaybd = ngayBD.getMonth() + 1 +"/" + ngayBD.getDate() + "/" +ngayBD.getFullYear();
+                         var ngayKT = new Date(parseInt(item.NgayKT.replace(/(^.*\()|([+-].*$)/g, '')));
+                         var ngaykt = ngayKT.getMonth() +1 +"/" +ngayKT.getDate() +"/" + ngayKT.getFullYear();
+                         var NgayKTDK = new Date (parseInt(item.NgayKTDK.replace(/(^.*\()|([+-].*$)/g, '')));
+                         var ngay = NgayKTDK.getMonth() +1 + "/" +NgayKTDK.getDate() +"/" +NgayKTDK.getFullYear();
+                         var row = "<tr>"
+                             + "<td>" + item.LopHocPhanId + "</td>"
+                                + "<td>" + item.tenLopHocPhan + "</td>"
+                                  + "<td>" + item.soLuongSV + "</td>"
+                                 + "<td>" + ngaybd + "</td>"
+                             + "<td>" + ngaykt + "</td>"
+                             + "<td>" + ngay + "</td>"
+                                + "<td>" + item.TrangThai + "</td>"
+                                + "<td>" + item.Mota + "</td>"
+                         $('#tablLopHocPhan tbody').append(row);
+                         $('#tablLopHocPhan tbody tr').click(function () {
+                         $('.selected').removeClass('selected');
+                         $(this).addClass("selected");
+                         var temp = $(this).find('td:first').html();
+                         $.ajax({
+                            type: "post",
+                            url: '@Url.Action("getDanhSachSinhVien")',
+                            data: {
+                                id: parseInt(temp)
+                             },
+                             success: function (json) {
+                                 $("#tablDanhSachSinhVien tbody tr").remove();
+                                 $.each(json, function (index, item) {
+                                     var row = "<tr>"
+                                         + "<td>" + item.SinhVienId+ "</td>"
+                                            + "<td>" + item.tenSinhVien + "</td>"
+                                              + "<td>" + item.Gioitinh + "</td>"
+                                            + "<td>" + item.Ngaysinh + "</td>"
+                                            + "<td>" + item.Diachi + "</td>"
+                                            + "<td>" + item.ChuyenNganh + "</td>"
+                                            + "<td>" + item.BacDT + "</td>"
+                                            + "<td>" + item.soDienThoai + "</td>"
+                                     $('#tablDanhSachSinhVien tbody').append(row);
+                                    });
+                                },
+                             error: function () {
+                                 alert("Error");
+                             }
+                            });
+                        });
+                                });
+                            },
+                            error: function () {
+                                alert("Error");
+                            }
+                         });
+        });
+
+
+    </script>
+    <script type="text/javascript">
+        $('#nhapdiem').click(function () {
+
+                         $('.selected').removeClass('selected');
+                         $(this).addClass("selected");
+                         var temp = $(this).find('td:first').html();
+                         $.ajax({
+                            type: "post",
+                            url: '@Url.Action("NhapDiem")',
+                            data: {
+                                id: parseInt(temp)
+                             },
+                             success: function (json) {
+                                 $("#tablnhapdiem tbody tr").remove();
+                                 $.each(json, function (index, item) {
+                                     var row = "<tr>"
+                                     $('#tblnhapdiem tbody').append(row);
+                                    });
+                                },
+                             error: function () {
+                                 alert("Error");
+                             }
+                            });
+                        });
+    </script>
+</body>
+</html>

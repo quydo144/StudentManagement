@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sinh viên</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-11">
+                <table class="table">
+                    <tr>
+                        <td>
+                            @Html.ActionLink("Quản lý sinh viên", "SinhVien", "QuanLy", new { area = "" }, new { @class = "navbar-brand", @style = "font-size: 1.7em;" })
+                        </td>
+                        <td>
+                            @Html.ActionLink("Quản lý giảng viên", "GiangVien", "QuanLy", new { area = "" }, new { @class = "navbar-brand", @style = "font-size: 1.7em;" })
+                        </td>
+                        <td>
+                            @Html.ActionLink("Quản lý lớp học phần", "LopHocPhan", "QuanLy", new { area = "" }, new { @class = "navbar-brand", @style = "font-size: 1.7em;" })
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-1">
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

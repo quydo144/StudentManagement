@@ -1,0 +1,94 @@
+﻿
+@model IEnumerable<EntityFrameWork_BaiTapLon.Entities_BaiTapLon.MonHoc>
+
+@{
+    ViewBag.Title = "LopHocPhan";
+}
+
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row" style="margin-bottom:1.5em;">
+            <div class="col-md-12">
+                <nav class="nav navbar-expand-md">
+                    <span style="margin-right:1em;">Danh sách Môn Học</span>
+                    <select class="form-control form-control-sm" style="font-size:1em;">
+                        <option value="k13">2017-2021</option>
+                        <option value="k14">2018-2022</option>
+                        <option value="k15">2019-2023</option>
+                    </select>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <table class="table table-striped">
+                <tr>
+                    <th scope="row">Mã số Môn Học</th>
+                    <th scope="row">Tên Môn Học</th>
+                    <th scope="row">Số Tín Chỉ</th>
+                    <th scope="row">Lựa chọn</th>
+                </tr>
+                @foreach (var item in Model.ToList())
+                {
+                    <tr>
+                        <td>@item.MonhocId</td>
+                        <td>@item.TenMonHoc</td>
+                        <td>@item.Sotinchi</td>
+                        <td style="font-size:1em;">
+                            <form>
+                                <button id="btnAdd" value="@item.MonhocId" class="btn-info" style="width: 87px; height: 31px;">Them</button>
+                                <button id="btnCapNhat" value="@item.MonhocId" class="btn-light" style="width:150px;height:31px;">Cậpnhật</button>
+
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </table>
+            <div>
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+            $("#btnAdd").click(function () {
+                var idMon = $("#btnAdd").val();
+                $.ajax({
+                    type: "post",
+                    url: "@Url.Action("AddLPH")",
+                    data: {
+                        id: idMon
+                    },
+                    success: function (data) {
+                        alert("Thành công");;
+                    },
+                    error: function () {
+                        alert("Thất bại");
+                    }
+                });
+            });
+    </script>
+    <script type="text/javascript">
+            $("#btnCapNhat").click(function () {
+                var idMon = $("#btnCapNhat").val();
+                $.ajax({
+                    type: "post",
+                    url: "@Url.Action("CapNhatLHP")",
+                    data: {
+                        idMon: idMon
+                    },
+                    success: function (data) {
+                        alert("Thành công");;
+                    },
+                    error: function () {
+                        alert("Thất bại");
+                    }
+                });
+            });
+    </script>
+</body>
+</html>
